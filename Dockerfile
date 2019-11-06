@@ -28,7 +28,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt xenial-pgdg main" >> \
 RUN apt-get -qq update
 
 # Set build variables
-ARG PGSQL_VERSION=9.6
+ARG PGSQL_VERSION=9.3
 ARG POSTGIS_VERSION=2.4
 
 # Install build dependencies
@@ -115,6 +115,7 @@ ARG BUILD_THREADS=16
 ARG IMPORT_ADMINISTRATIVE=false
 COPY scripts/filter_administrative.sh \
       /srv/nominatim/scripts/filter_administrative.sh
+RUN sed -i -e 's/\r$//' /srv/nominatim/scripts/filter_administrative.sh
 RUN /srv/nominatim/scripts/filter_administrative.sh
 
 # Add postgresql users
