@@ -117,8 +117,8 @@ COPY scripts/filter_administrative.sh \
       /srv/nominatim/scripts/filter_administrative.sh
 USER root
 RUN apt-get install -y dos2unix
-USER nominatim
 RUN dos2unix /srv/nominatim/scripts/filter_administrative.sh
+USER nominatim
 RUN /srv/nominatim/scripts/filter_administrative.sh
 
 # Add postgresql users
