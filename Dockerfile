@@ -115,7 +115,9 @@ ARG BUILD_THREADS=16
 ARG IMPORT_ADMINISTRATIVE=false
 COPY scripts/filter_administrative.sh \
       /srv/nominatim/scripts/filter_administrative.sh
+USER root
 RUN apt-get install -y dos2unix
+USER nominatim
 RUN dos2unix /srv/nominatim/scripts/filter_administrative.sh
 RUN /srv/nominatim/scripts/filter_administrative.sh
 
