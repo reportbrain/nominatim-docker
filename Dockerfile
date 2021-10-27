@@ -64,13 +64,13 @@ RUN apt-get install -y --no-install-recommends \
       postgresql-${PGSQL_VERSION}-postgis-scripts \
       postgresql-contrib-${PGSQL_VERSION} \
       postgresql-server-dev-${PGSQL_VERSION} \
-      python \
+      python3 \
       python-pip3 \
       python-setuptools \
       sudo \
       zlib1g-dev
-RUN pip install --upgrade pip
-RUN pip install osmium
+RUN pip3 install --upgrade pip3
+RUN pip3 install osmium
 
 # Create nominatim user account
 USER root
