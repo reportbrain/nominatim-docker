@@ -33,6 +33,9 @@ ARG POSTGIS_VERSION=2.4
 
 # Install build dependencies
 USER root
+RUN apt-get install -y software-properties-common
+RUN apt-add-repository universe
+RUN apt-get update && apt-get install -y python-pip
 RUN apt-get install -y --no-install-recommends \
       apache2 \
       build-essential \
@@ -64,13 +67,13 @@ RUN apt-get install -y --no-install-recommends \
       postgresql-${PGSQL_VERSION}-postgis-scripts \
       postgresql-contrib-${PGSQL_VERSION} \
       postgresql-server-dev-${PGSQL_VERSION} \
-      python3 \
-      python-pip3 \
+      python \
+      python-pip \
       python-setuptools \
       sudo \
       zlib1g-dev
-RUN pip3 install --upgrade pip3
-RUN pip3 install osmium
+RUN pip install --upgrade pip
+RUN pip install osmium
 
 # Create nominatim user account
 USER root
