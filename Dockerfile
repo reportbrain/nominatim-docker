@@ -35,7 +35,7 @@ ARG POSTGIS_VERSION=2.4
 USER root
 RUN apt-get install -y software-properties-common
 RUN apt-add-repository universe
-RUN apt-get update && apt-get install -y python-pip
+RUN apt-get update && apt-get install -y python3-pip
 RUN apt-get install -y --no-install-recommends \
       apache2 \
       build-essential \
