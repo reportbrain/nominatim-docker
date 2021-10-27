@@ -68,7 +68,6 @@ RUN apt-get install -y --no-install-recommends \
       postgresql-contrib-${PGSQL_VERSION} \
       postgresql-server-dev-${PGSQL_VERSION} \
       python \
-      python-pip \
       python-setuptools \
       sudo \
       zlib1g-dev
