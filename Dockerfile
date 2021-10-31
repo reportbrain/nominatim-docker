@@ -37,7 +37,7 @@ RUN apt-get install -y software-properties-common
 RUN apt-add-repository universe
 RUN apt-get update && apt-get install -y python3-pip
 RUN apt-cache policy postgresql-12-postgis-3 postgresql-12-postgis-3-scripts
-RUN apt-get install postgresql-13-postgis-3 postgresql-13-postgis-3-scripts
+# RUN apt-get install postgresql-12-postgis-3=3.1.1+dfsg-1.pgdg20.04+1 postgresql-13-postgis-3-scripts=3.1.1+dfsg-1.pgdg20.04+1
 RUN apt-get install -y --no-install-recommends \
       apache2 \
       build-essential \
@@ -65,6 +65,8 @@ RUN apt-get install -y --no-install-recommends \
       php-intl \
       php-pear \
       php-pgsql \
+      postgresql-${PGSQL_VERSION}-postgis-${POSTGIS_VERSION} \
+      postgresql-${PGSQL_VERSION}-postgis-scripts \
       postgresql-contrib-${PGSQL_VERSION} \
       postgresql-server-dev-${PGSQL_VERSION} \
       python \
