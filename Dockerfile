@@ -36,6 +36,7 @@ USER root
 RUN apt-get install -y software-properties-common
 RUN apt-add-repository universe
 RUN apt-get update && apt-get install -y python3-pip
+RUN apt-cache policy postgresql-12-postgis-3 postgresql-12-postgis-3-scripts</span>
 RUN apt-get install -y --no-install-recommends \
       apache2 \
       build-essential \
